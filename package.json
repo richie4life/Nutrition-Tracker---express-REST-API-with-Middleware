@@ -1,0 +1,23 @@
+{
+  "name": "nutrition-tracker---express-rest-api-with-middleware",
+  "version": "0.0.1",
+  "description": "ESM ExpressJS Keto Nutrition Tracker project",
+  "homepage": "https://github.com/richie4life/Nutrition-Tracker---express-REST-API-with-Middleware#readme",
+  "bugs": {
+    "url": "https://github.com/richie4life/Nutrition-Tracker---express-REST-API-with-Middleware/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richie4life/Nutrition-Tracker---express-REST-API-with-Middleware.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
