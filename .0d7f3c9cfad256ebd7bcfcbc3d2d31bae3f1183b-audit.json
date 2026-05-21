@@ -1,0 +1,40 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": ".0d7f3c9cfad256ebd7bcfcbc3d2d31bae3f1183b-audit.json",
+    "files": [
+        {
+            "date": 1779333838611,
+            "name": "2026-05-20-22-23-chickens-api.log",
+            "hash": "6b7720f9d96da4fcfa3a768b45c01e0c1f7dbd2a233f9b5f90c3f999c513eabd"
+        },
+        {
+            "date": 1779333852358,
+            "name": "2026-05-20-22-24-chickens-api.log",
+            "hash": "1fbccbf0cf18364f844746783152d41ab0eff29e175d97dd380772d03a7c53fb"
+        },
+        {
+            "date": 1779333915087,
+            "name": "2026-05-20-22-25-chickens-api.log",
+            "hash": "f3f978661f875e6be2a2270bbf384b75c3f8863cb3017946cbb1a8dbd161c5b7"
+        },
+        {
+            "date": 1779334004065,
+            "name": "2026-05-20-22-26-chickens-api.log",
+            "hash": "22f3ae11738ed8ebcc0725aaf618c60f1555283661ccb8b4bbbb88f302336ae6"
+        },
+        {
+            "date": 1779334047224,
+            "name": "2026-05-20-22-27-chickens-api.log",
+            "hash": "52dd65ebf0dbedf6d8958babb12a67b2aef6a648993c54327a961fd247d6c03c"
+        },
+        {
+            "date": 1779334083389,
+            "name": "2026-05-20-22-28-chickens-api.log",
+            "hash": "17a27270742fc915a91afb143533c24671313fe3d3a76a7ae9cb21030a55de31"
+        }
+    ],
+    "hashType": "sha256"
+}

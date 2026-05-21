@@ -1,12 +1,9 @@
 const KETO_FOODS = [
   {
-    "log_id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-20",
-    "servings": 1,
-    "api_id": 648506,
+    "id": 648506,
     "title": "Flank Steak with Chimichurri Sauce",
     "image": "https://spoonacular.com/recipeImages/648506-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 420, "unit": "kcal" },
@@ -14,16 +11,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 28, "unit": "g" },
         { "name": "Net Carbs", "amount": 3, "unit": "g" }
       ]
-    }
+    },
+    "color": "blue"
   },
   {
-    "log_id": "4da6c3e2-6322-4a0e-97e3-0d6d56ba12c9",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-20",
-    "servings": 2,
-    "api_id": 637999,
+    "id": 637999,
     "title": "Lemon Garlic Baked Salmon",
     "image": "https://spoonacular.com/recipeImages/637999-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 380, "unit": "kcal" },
@@ -31,16 +26,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 34, "unit": "g" },
         { "name": "Net Carbs", "amount": 1, "unit": "g" }
       ]
-    }
+    },
+    "color": "red"
   },
   {
-    "log_id": "31ad5b6e-c684-482d-a411-cf9b0c2da5e2",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-20",
-    "servings": 1,
-    "api_id": 652423,
+    "id": 652423,
     "title": "Creamy Garlic Parmesan Mushroom Chicken",
     "image": "https://spoonacular.com/recipeImages/652423-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 510, "unit": "kcal" },
@@ -48,16 +41,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 36, "unit": "g" },
         { "name": "Net Carbs", "amount": 4, "unit": "g" }
       ]
-    }
+    },
+    "color": "red"
   },
   {
-    "log_id": "83cde6f2-aa14-416d-be8f-5a0b1c2d3e4f",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-20",
-    "servings": 3,
-    "api_id": 661234,
+    "id": 661234,
     "title": "Bacon Wrapped Jalapeno Poppers",
     "image": "https://spoonacular.com/recipeImages/661234-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 290, "unit": "kcal" },
@@ -65,16 +56,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 12, "unit": "g" },
         { "name": "Net Carbs", "amount": 2, "unit": "g" }
       ]
-    }
+    },
+    "color": "red"
   },
   {
-    "log_id": "e98dfda3-24c5-4d7e-bf9a-1b1c2d3e4f5a",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-19",
-    "servings": 1,
-    "api_id": 674321,
+    "id": 674321,
     "title": "Avocado Egg Salad",
     "image": "https://spoonacular.com/recipeImages/674321-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 340, "unit": "kcal" },
@@ -82,16 +71,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 14, "unit": "g" },
         { "name": "Net Carbs", "amount": 3, "unit": "g" }
       ]
-    }
+    },
+    "color": "green"
   },
   {
-    "log_id": "11f4a3b4-15d6-4e8f-ba0b-7c2d3e4f5a6b",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-19",
-    "servings": 1,
-    "api_id": 689102,
+    "id": 689102,
     "title": "Cheesy Garlic Cauliflower Mash",
     "image": "https://spoonacular.com/recipeImages/689102-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 180, "unit": "kcal" },
@@ -99,16 +86,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 6, "unit": "g" },
         { "name": "Net Carbs", "amount": 4, "unit": "g" }
       ]
-    }
+    },
+    "color": "green"
   },
   {
-    "log_id": "a9a3b4c5-06e7-4f9a-ab1c-ad3e4f5a6b7c",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-19",
-    "servings": 1,
-    "api_id": 695543,
+    "id": 695543,
     "title": "Keto Butter Coffee (Bulletproof)",
     "image": "https://spoonacular.com/recipeImages/695543-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 230, "unit": "kcal" },
@@ -116,16 +101,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 0, "unit": "g" },
         { "name": "Net Carbs", "amount": 0, "unit": "g" }
       ]
-    }
+    },
+    "color": "blue"
   },
   {
-    "log_id": "469c5d6e-df8a-4b0c-bd2e-9f4a5b6c7d8e",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-18",
-    "servings": 1,
-    "api_id": 712233,
+    "id": 712233,
     "title": "Crispy Garlic Parmesan Pork Chops",
     "image": "https://spoonacular.com/recipeImages/712233-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 460, "unit": "kcal" },
@@ -133,16 +116,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 42, "unit": "g" },
         { "name": "Net Carbs", "amount": 1, "unit": "g" }
       ]
-    }
+    },
+    "color": "blue"
   },
   {
-    "log_id": "275d6e7f-fa9b-4c1d-be3f-ba5b6c7d8e9f",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-18",
-    "servings": 1,
-    "api_id": 728844,
+    "id": 728844,
     "title": "Spinach and Feta Crustless Quiche",
     "image": "https://spoonacular.com/recipeImages/728844-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 260, "unit": "kcal" },
@@ -150,16 +131,14 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 16, "unit": "g" },
         { "name": "Net Carbs", "amount": 3, "unit": "g" }
       ]
-    }
+    },
+    "color": "green"
   },
   {
-    "log_id": "678e7f8a-9b0c-412e-bf4a-5b6c7d8e9f0a",
-    "user_id": "8f3b201a-6c4d-4b21-9e70-5a123bc45de6",
-    "log_date": "2026-05-18",
-    "servings": 2,
-    "api_id": 734411,
+    "id": 734411,
     "title": "Everything Bagel Celery Sticks with Cream Cheese",
     "image": "https://spoonacular.com/recipeImages/734411-312x231.jpg",
+    "diet": "keto",
     "nutrition": {
       "nutrients": [
         { "name": "Calories", "amount": 150, "unit": "kcal" },
@@ -167,28 +146,76 @@ const KETO_FOODS = [
         { "name": "Protein", "amount": 3, "unit": "g" },
         { "name": "Net Carbs", "amount": 2, "unit": "g" }
       ]
-    }
+    },
+    "color": "green"
   }
 ];
 
+import { logger } from '../utils/logger.js';
 
 export class KetoFoodsRepository {
     static getKetoFoods() {
-        console.log('\t\tKetoFoodsRepository : getKetoFoods()');
+        logger.debug('\t\tKetoFoodsRepository : getKetoFoods()');
         return KETO_FOODS;
     } 
 
-    // getKetoFoodsBylog_id
-    static getKetoFoodsBylog_id(log_id) {
-        console.log('\t\tKetoFoodsRepository : getKetoFoodsBylog_id()');
-        return {};
+    // getKetoFoodsByid
+    static getKetoFoodsByid(id) {
+        logger.debug(`\t\tKetoFoodsRepository : getKetoFoodsByid(${id})`);
+        return KETO_FOODS.find(ketoFood => ketoFood.id === id);
     }
 
     // createKetoFood
+    static createKetoFoods(NewketoFood) {
+        logger.debug('\t\tKetoFoodsRepository : createKetoFood()');
+        KETO_FOODS.push(NewketoFood);
+        return NewketoFood;
+    }
 
     // replaceKetoFood
 
+    static replaceKetoFood = (id, replaceKetoFood) => {
+        logger.debug('\t\tKetoFoodsRepository : replaceKetoFood()');
+
+        //TODO: Replace keto food in DB
+        KETO_FOODS = KETO_FOODS.filter(ketoFood => ketoFood.id !== id); // This will remove the existing keto food with the same id from the list
+        KETO_FOODS.push(replaceKetoFood); // This will add the updated keto food to the list
+        return replaceKetoFood;
+    }
+
     // updateKetoFood
 
+    static updateKetoFood = (id, updateKetoFood) => {
+        logger.debug('\t\tKetoFoodsRepository : updateKetoFood()');
+
+        //TODO: Replace keto food in DB
+
+        const ketoFood = KETO_FOODS.find(ketoFood => ketoFood.id === id); // This will find the existing keto food with the same id from the list
+
+        if (!ketoFood) {
+            return null; // This will return null if the keto food with the given id is not found in the list
+        }
+
+        Object.keys(updateKetoFood).forEach(key => {
+            ketoFood[key] = updateKetoFood[key]; // This will update the existing keto food with the new values from the updateKetoFood object
+        });
+
+
+        return ketoFood; // This will return the updated keto food
+    }
+
     // deleteKetoFood
+
+    static deleteKetoFood = (id) => {
+        logger.debug('\t\tKetoFoodsRepository : deleteKetoFood()');
+
+        //TODO: Delete keto food from DB
+        const originalsize = KETO_FOODS.length; // This will store the original size of the list before deleting the keto food
+        KETO_FOODS = KETO_FOODS.filter(ketoFood => ketoFood.id !== id); // This will remove the existing keto food with the same id from the list
+
+        if (KETO_FOODS.length === originalsize) {
+            return false; // This will return false if the keto food with the given id is not found in the list and therefore not deleted
+        }
+        return true; // This will return true if the keto food was successfully deleted
+    }
 };
