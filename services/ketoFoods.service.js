@@ -4,14 +4,14 @@ import { logger } from '../utils/logger.js';
 
 export class KetoFoodsService {
     static getKetoFoods() {
-        logger.debug('\tKetoFoodsService : getKetoFoods()');
+        logger.debug('KetoFoodsService : getKetoFoods()');
         return KetoFoodsRepository.getKetoFoods();
     }
 
 
     // getKetoFoodsByid
     static getKetoFoodsByid(id) {
-        logger.debug(`\tKetoFoodsService : getKetoFoodsByid(${id})`);
+        logger.debug(`KetoFoodsService : getKetoFoodsByid(${id})`);
         return KetoFoodsRepository.getKetoFoodsByid(id);
     }
 

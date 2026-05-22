@@ -16,10 +16,13 @@ export class KetoFoodsController {
 
         const result = KetoFoodsService.getKetoFoodsByid(id);
 
+
         if (result) {
             res.status(200).json(result);
+            return;
         } else {
             res.status(404).json({ message: `Keto food with id ${id} not found` });
+            return;
         }
 
         res.status(200).json(result);

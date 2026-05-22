@@ -16,7 +16,7 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
 export const logger = createLogger({
   level,
   format: combine(
-    label({ label: 'CHICKENS-API' }),
+    label({ label: 'ketoFoods-API' }),
     timestamp(),
     myFormat
   ),

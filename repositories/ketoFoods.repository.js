@@ -1,4 +1,4 @@
-const KETO_FOODS = [
+let KETO_FOODS = [
   {
     "id": 648506,
     "title": "Flank Steak with Chimichurri Sauce",
@@ -155,19 +155,20 @@ import { logger } from '../utils/logger.js';
 
 export class KetoFoodsRepository {
     static getKetoFoods() {
-        logger.debug('\t\tKetoFoodsRepository : getKetoFoods()');
+        logger.debug('KetoFoodsRepository : getKetoFoods()');
         return KETO_FOODS;
     } 
 
     // getKetoFoodsByid
     static getKetoFoodsByid(id) {
-        logger.debug(`\t\tKetoFoodsRepository : getKetoFoodsByid(${id})`);
-        return KETO_FOODS.find(ketoFood => ketoFood.id === id);
+        logger.debug(`KetoFoodsRepository : getKetoFoodsByid(${id})`);
+        const parsedId = isNaN(id) ? id : Number(id);
+        return KETO_FOODS.find(ketoFood => ketoFood.id === parsedId);
     }
 
     // createKetoFood
     static createKetoFoods(NewketoFood) {
-        logger.debug('\t\tKetoFoodsRepository : createKetoFood()');
+        logger.debug('KetoFoodsRepository : createKetoFood()');
         KETO_FOODS.push(NewketoFood);
         return NewketoFood;
     }
@@ -175,7 +176,7 @@ export class KetoFoodsRepository {
     // replaceKetoFood
 
     static replaceKetoFood = (id, replaceKetoFood) => {
-        logger.debug('\t\tKetoFoodsRepository : replaceKetoFood()');
+        logger.debug('KetoFoodsRepository : replaceKetoFood()');
 
         //TODO: Replace keto food in DB
         KETO_FOODS = KETO_FOODS.filter(ketoFood => ketoFood.id !== id); // This will remove the existing keto food with the same id from the list
@@ -186,7 +187,7 @@ export class KetoFoodsRepository {
     // updateKetoFood
 
     static updateKetoFood = (id, updateKetoFood) => {
-        logger.debug('\t\tKetoFoodsRepository : updateKetoFood()');
+        logger.debug('KetoFoodsRepository : updateKetoFood()');
 
         //TODO: Replace keto food in DB
 
@@ -207,7 +208,7 @@ export class KetoFoodsRepository {
     // deleteKetoFood
 
     static deleteKetoFood = (id) => {
-        logger.debug('\t\tKetoFoodsRepository : deleteKetoFood()');
+        logger.debug('KetoFoodsRepository : deleteKetoFood()');
 
         //TODO: Delete keto food from DB
         const originalsize = KETO_FOODS.length; // This will store the original size of the list before deleting the keto food
