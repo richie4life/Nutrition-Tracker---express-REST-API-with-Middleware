@@ -47,37 +47,40 @@ export class KetoFoodsController {
         res.status(200).json(result);
     };
 
-    // updateKetoFood
 
     static updateKetoFood = (req, res) => {
-        const id = req.params.id;
-        logger.debug(`KetoFoodsController : updateKetoFood(${id})`);
+    // 1. Parse the incoming string ID to a number if it is numeric
+    const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
+    
+    logger.debug(`KetoFoodsController : updateKetoFood(${id})`);
 
-        const result = KetoFoodsService.updateKetoFood(id, req.body);
+    // 2. Pass the correctly typed ID into your service layer
+    const result = KetoFoodsService.updateKetoFood(id, req.body);
 
-        if (!result) {
-            //return res.status(404).json({ message: `Keto food with id ${id} not found` });
-            res.sendStatus(404);
-            return;
-        }
+    if (!result) {
+        // This will now execute properly with your custom JSON message
+        return res.status(404).json({ message: `Keto food with id ${id} not found` });
+    }
 
-        res.status(200).json(result);
+    res.status(200).json(result);
     };
 
-    // deleteKetoFood
 
     static deleteKetoFood = (req, res) => {
-        const id = req.params.id;
-        logger.debug(`KetoFoodsController : deleteKetoFood(${id})`);
+    // 1. Parse the incoming string ID to a number if it is numeric
+    const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
+    
+    logger.debug(`KetoFoodsController : deleteKetoFood(${id})`);
 
-        const result = KetoFoodsService.deleteKetoFood(id);
-        if (!result) {
-            //return res.status(404).json({ message: `Keto food with id ${id} not found` });
-            res.sendStatus(404);
-            return;
-        }
+    // 2. Pass the correctly typed ID into your service layer
+    const result = KetoFoodsService.deleteKetoFood(id, req.body);
 
-        res.sendStatus(200);
+    if (!result) {
+        // This will now execute properly with your custom JSON message
+        return res.status(404).json({ message: `Keto food with id ${id} not found` });
+    }
+
+    res.status(200).json(result);
     };
 }
 

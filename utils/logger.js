@@ -22,13 +22,5 @@ export const logger = createLogger({
   ),
   transports: [
     new transports.Console(),
-    // new transports.File({ filename: 'chickens-api.log' })
-    // new DailyRotateFile({
-    //   filename: '%DATE%-chickens-api.log',
-    //   datePattern: 'YYYY-MM-DD-HH-mm',
-    //   zippedArchive: true,
-    //   maxSize: '20m',
-    //   maxFiles: '14d'
-    // })
   ]
 });

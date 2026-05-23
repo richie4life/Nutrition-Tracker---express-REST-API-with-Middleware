@@ -28,7 +28,7 @@ static createKetoFoods(NewketoFood) {
 static replaceKetoFood = (id, replaceKetoFood) => {
         logger.debug('\tKetoFoodsService : replaceKetoFood()');
 
-        //  TODO: Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
+        //  Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
         replaceKetoFood.id = id; // This will ensure that the id of the keto food is not changed when we replace it
         return KetoFoodsRepository.replaceKetoFood(id,replaceKetoFood); // This will call the replaceKetoFood method in the repository to update the keto food
     };
@@ -38,17 +38,17 @@ static replaceKetoFood = (id, replaceKetoFood) => {
 static updateKetoFood = (id, updateKetoFood) => {
         logger.debug('\tKetoFoodsService : updateKetoFood()');
 
-        //  TODO: Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
+        //  Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
         updateKetoFood.id = id; // This will ensure that the id of the keto food is not changed when we update it
         return KetoFoodsRepository.updateKetoFood(id,updateKetoFood); // This will call the updateKetoFood method in the repository to update the keto food
     };
 
 // deleteKetoFood
 
-static deleteChicken = (id) => {
-        logger.debug('\tChickensServices : deleteChicken()');
+static deleteKetoFood = (id) => {
+        logger.debug('KetoFoodsService : deleteKetoFood()');
 
-        //  TODO: Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
+        //  Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
         return KetoFoodsRepository.deleteKetoFood(id); // This will call the deleteKetoFood method in the repository to delete the keto food
     };
 };

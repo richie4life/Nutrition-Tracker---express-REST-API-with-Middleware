@@ -173,23 +173,39 @@ export class KetoFoodsRepository {
         return NewketoFood;
     }
 
-    // replaceKetoFood
 
+  // replaceKetoFood
     static replaceKetoFood = (id, replaceKetoFood) => {
-        logger.debug('KetoFoodsRepository : replaceKetoFood()');
+      logger.debug('KetoFoodsRepository : replaceKetoFood()');
 
-        //TODO: Replace keto food in DB
-        KETO_FOODS = KETO_FOODS.filter(ketoFood => ketoFood.id !== id); // This will remove the existing keto food with the same id from the list
-        KETO_FOODS.push(replaceKetoFood); // This will add the updated keto food to the list
-        return replaceKetoFood;
+    // 1. Convert the incoming string ID to a number to match your mock data array types
+    const parsedId = isNaN(id) ? id : Number(id);
+
+    // 2. Explicitly ensure the object being saved also uses the numeric ID format
+    if (typeof replaceKetoFood.id !== 'undefined' && !isNaN(replaceKetoFood.id)) {
+        replaceKetoFood.id = Number(replaceKetoFood.id);
     }
+
+    // 3. Search using the correctly typed ID
+    const index = KETO_FOODS.findIndex(ketoFood => ketoFood.id === parsedId);
+
+    if (index !== -1) {
+        // Replace the existing food item at its original position
+        KETO_FOODS[index] = replaceKetoFood;
+    } else {
+        // Only push if the item genuinely does not exist under either data type
+        KETO_FOODS.push(replaceKetoFood);
+    }
+
+    return replaceKetoFood;
+  }
 
     // updateKetoFood
 
     static updateKetoFood = (id, updateKetoFood) => {
         logger.debug('KetoFoodsRepository : updateKetoFood()');
 
-        //TODO: Replace keto food in DB
+        // Update keto food in DB
 
         const ketoFood = KETO_FOODS.find(ketoFood => ketoFood.id === id); // This will find the existing keto food with the same id from the list
 
@@ -210,7 +226,7 @@ export class KetoFoodsRepository {
     static deleteKetoFood = (id) => {
         logger.debug('KetoFoodsRepository : deleteKetoFood()');
 
-        //TODO: Delete keto food from DB
+        // Delete keto food from DB
         const originalsize = KETO_FOODS.length; // This will store the original size of the list before deleting the keto food
         KETO_FOODS = KETO_FOODS.filter(ketoFood => ketoFood.id !== id); // This will remove the existing keto food with the same id from the list
 
