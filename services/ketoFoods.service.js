@@ -18,7 +18,7 @@ export class KetoFoodsService {
 // createKetoFood
 
 static createKetoFoods(NewketoFood) {
-        logger.debug(`\tKetoFoodsService : createKetoFoods(${JSON.stringify(NewketoFood)})`);
+        logger.debug(`KetoFoodsService : createKetoFoods(${JSON.stringify(NewketoFood)})`);
         NewketoFood.id = uuid();
         return KetoFoodsRepository.createKetoFoods(NewketoFood);
     }
@@ -26,7 +26,7 @@ static createKetoFoods(NewketoFood) {
 // replaceKetoFood
 
 static replaceKetoFood = (id, replaceKetoFood) => {
-        logger.debug('\tKetoFoodsService : replaceKetoFood()');
+        logger.debug('KetoFoodsService : replaceKetoFood()');
 
         //  Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
         replaceKetoFood.id = id; // This will ensure that the id of the keto food is not changed when we replace it
@@ -36,7 +36,7 @@ static replaceKetoFood = (id, replaceKetoFood) => {
 // updateKetoFood
 
 static updateKetoFood = (id, updateKetoFood) => {
-        logger.debug('\tKetoFoodsService : updateKetoFood()');
+        logger.debug('KetoFoodsService : updateKetoFood()');
 
         //  Do not let the client update the id of the keto food, we should use the existing id of the keto food to update it
         updateKetoFood.id = id; // This will ensure that the id of the keto food is not changed when we update it
