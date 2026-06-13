@@ -5,12 +5,6 @@ export const ketoFoodColorMiddleware = (req, res, next) => {
 
     const color = req.body?.color;
 
-    // if(color === undefined || color === null) {
-    //     logger.warn('ketoFoodColorMiddleware : no color property, calling next()');
-    //     next();
-    //     return;
-    // }
-
     if (!color) {
         logger.warn('ketoFoodColorMiddleware : no color property, calling next()');
         next();

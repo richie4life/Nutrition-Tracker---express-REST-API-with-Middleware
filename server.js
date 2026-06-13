@@ -2,7 +2,6 @@
 import express from 'express';
 import { ketoFoodRouter } from './routes/ketoFood.routes.js';
 import { logger } from './utils/logger.js';
-// import { ketoFoodColorMiddleware } from './middleware/ketoFoodColor.middleware.js';
 import { errorHandlerMiddleware } from './middleware/errorHandler.middleware.js';
 import { database } from './utils/database.js';
 
