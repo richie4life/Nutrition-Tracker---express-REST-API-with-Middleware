@@ -2,19 +2,19 @@ import { KetoFoodsService } from "../services/ketoFoods.service.js";
 import { logger } from '../utils/logger.js';
 
 export class KetoFoodsController {
-    static getKetoFoods(req, res) {
+    static getKetoFoods = async (req, res, next) => {
         logger.debug('KetoFoodsController : getKetoFoods()');
 
-        const result  = KetoFoodsService.getKetoFoods();
+        const result = await KetoFoodsService.getKetoFoods();
         res.status(200).json(result);
     };
 
     // getKetoFoodsByid
-    static getKetoFoodsByid(req, res) {
+    static getKetoFoodsByid = async (req, res) => {
         const id = req.params.id;
         logger.debug(`KetoFoodsController : getKetoFoodsByid(${id})`);
 
-        const result = KetoFoodsService.getKetoFoodsByid(id);
+        const result = await KetoFoodsService.getKetoFoodsByid(id);
 
 
         if (result) {
@@ -30,57 +30,62 @@ export class KetoFoodsController {
 
     // createKetoFood
 
-    static createKetoFoods(req, res) {
+    static createKetoFoods = async (req, res) => {
         logger.debug('KetoFoodsController : createKetoFoods()');
 
-        const result  = KetoFoodsService.createKetoFoods(req.body);
+        const result = await KetoFoodsService.createKetoFoods(req.body);
         res.status(200).json(result);
     };
 
     // replaceKetoFood
 
-    static replaceKetoFood = (req, res) => {
+    static replaceKetoFood = async (req, res) => {
         const id = req.params.id;
         logger.debug(`KetoFoodsController : replaceKetoFood(${id})`);
 
-        const result = KetoFoodsService.replaceKetoFood(id, req.body);
+        const result = await KetoFoodsService.replaceKetoFood(id, req.body);
+        if (!result) {
+            //return res.status(404).json({ message: `Chicken with id ${id} not found` });
+            res.sendStatus(404);
+            return;
+        }
         res.status(200).json(result);
     };
 
+    // updateKetoFood
+    static updateKetoFood = async (req, res) => {
+        // 1. Parse the incoming string ID to a number if it is numeric
+        const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
 
-    static updateKetoFood = (req, res) => {
-    // 1. Parse the incoming string ID to a number if it is numeric
-    const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
-    
-    logger.debug(`KetoFoodsController : updateKetoFood(${id})`);
+        logger.debug(`KetoFoodsController : updateKetoFood(${id})`);
 
-    // 2. Pass the correctly typed ID into your service layer
-    const result = KetoFoodsService.updateKetoFood(id, req.body);
+        // 2. Pass the correctly typed ID into your service layer
+        const result = await KetoFoodsService.updateKetoFood(id, req.body);
 
-    if (!result) {
-        // This will now execute properly with your custom JSON message
-        return res.status(404).json({ message: `Keto food with id ${id} not found` });
-    }
+        if (!result) {
+            // This will now execute properly with your custom JSON message
+            return res.status(404).json({ message: `Keto food with id ${id} not found` });
+        }
 
-    res.status(200).json(result);
+        res.status(200).json(result);
     };
 
+    // deleteKetoFood
+    static deleteKetoFood = async (req, res) => {
+        // 1. Parse the incoming string ID to a number if it is numeric
+        const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
 
-    static deleteKetoFood = (req, res) => {
-    // 1. Parse the incoming string ID to a number if it is numeric
-    const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
-    
-    logger.debug(`KetoFoodsController : deleteKetoFood(${id})`);
+        logger.debug(`KetoFoodsController : deleteKetoFood(${id})`);
 
-    // 2. Pass the correctly typed ID into your service layer
-    const result = KetoFoodsService.deleteKetoFood(id, req.body);
+        // 2. Pass the correctly typed ID into your service layer
+        const result = await KetoFoodsService.deleteKetoFood(id);
 
-    if (!result) {
-        // This will now execute properly with your custom JSON message
-        return res.status(404).json({ message: `Keto food with id ${id} not found` });
-    }
+        if (!result) {
+            // This will now execute properly with your custom JSON message
+            return res.status(404).json({ message: `Keto food with id ${id} not found` });
+        }
 
-    res.status(200).json(result);
+        res.status(200).json({ message: `Keto food with id ${id} deleted` });
     };
 }
 
