@@ -10,7 +10,7 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
     message,
     timestamp,
     service: label,
-    });
+  });
 });
 
 export const logger = createLogger({
