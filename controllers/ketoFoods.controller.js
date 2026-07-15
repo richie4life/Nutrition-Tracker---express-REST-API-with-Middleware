@@ -33,13 +33,33 @@ export class KetoFoodsController {
     static createKetoFoods = async (req, res) => {
         logger.debug('KetoFoodsController : createKetoFoods()');
 
+        if (req.file?.filename) {
+            req.body.imageUrl = `${Constants.IMAGE_STATIC_PATH}${req.file.filename}`;
+        }
+
+        if (req.body?.calories) {
+            req.body.calories = Number(req.body.calories) || 0;
+        };
+
+        if (req.body?.fat) {
+            req.body.fat = Number(req.body.fat) || 0;
+        };
+
+        if (req.body?.protein) {
+            req.body.protein = Number(req.body.protein) || 0;
+        };
+
+        if (req.body?.netCarbs) {
+            req.body.netCarbs = Number(req.body.netCarbs) || 0;
+        };
+
         const result = await KetoFoodsService.createKetoFoods(req.body);
         res.status(200).json(result);
     };
 
     // replaceKetoFood
 
-    static replaceKetoFood = async (req, res) => {
+    static replaceKetoFood = async (req, res, next) => {
         const id = req.params.id;
         logger.debug(`KetoFoodsController : replaceKetoFood(${id})`);
 
