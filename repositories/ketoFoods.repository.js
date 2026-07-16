@@ -23,7 +23,7 @@ export class KetoFoodsRepository {
     logger.debug(`KetoFoodsRepository : getKetoFoodsByid(${id})`);
     const parsedId = isNaN(id) ? id : Number(id);
     return database.db.collection(Constants.KETO_COLLECTION).findOne(
-      { id },
+      { id: parsedId },
       {
         projection: {
           _id: 0

@@ -11,7 +11,7 @@ export class KetoFoodsController {
 
     // getKetoFoodsByid
     static getKetoFoodsByid = async (req, res) => {
-        const id = req.params.id;
+        const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
         logger.debug(`KetoFoodsController : getKetoFoodsByid(${id})`);
 
         const result = await KetoFoodsService.getKetoFoodsByid(id);
@@ -34,7 +34,7 @@ export class KetoFoodsController {
         logger.debug('KetoFoodsController : createKetoFoods()');
 
         if (req.file?.filename) {
-            req.body.imageUrl = `${Constants.IMAGE_STATIC_PATH}${req.file.filename}`;
+            req.body.image = `${Constants.IMAGE_STATIC_PATH}${req.file.filename}`;
         }
 
         if (req.body?.calories) {
@@ -60,7 +60,7 @@ export class KetoFoodsController {
     // replaceKetoFood
 
     static replaceKetoFood = async (req, res, next) => {
-        const id = req.params.id;
+        const id = isNaN(req.params.id) ? req.params.id : Number(req.params.id);
         logger.debug(`KetoFoodsController : replaceKetoFood(${id})`);
 
         const result = await KetoFoodsService.replaceKetoFood(id, req.body);
