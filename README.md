@@ -67,8 +67,57 @@ This application is built with an **offline-first, self-contained architecture**
 
 The initial database records were seeded by:
 1. Fetching raw ketogenic recipe data from the **Spoonacular API** using the Bruno API client.
-2. Running a **Post-Response script** inside Bruno to extract, validate, and flatten the nutritional metrics (Fat, Protein, Net Carbs, Calories) into a flat schema.
-3. Seeding the resulting JSON payload directly into the MongoDB `Keto` collection.
+2. Running a **Post-Response script** inside Bruno to extract, validate, and flatten the nested Spoonacular response format into a flat schema:
+   ```javascript
+   let data = res.getBody();
+
+   if (data && data.results) {
+     data.results = data.results.map(recipe => {
+       // Initialize default values for your flat nutrient fields
+       let calories = 0;
+       let fat = 0;
+       let protein = 0;
+       let netCarbs = 0;
+       
+       if (recipe.nutrition && recipe.nutrition.nutrients) {
+         // 1. Find Total Carbs and Fiber to calculate Net Carbs
+         const totalCarbsObj = recipe.nutrition.nutrients.find(n => n.name === "Carbohydrates");
+         const fiberObj = recipe.nutrition.nutrients.find(n => n.name === "Fiber");
+         
+         const totalCarbs = totalCarbsObj ? totalCarbsObj.amount : 0;
+         const fiber = fiberObj ? fiberObj.amount : 0;
+         netCarbs = Math.max(0, Math.round((totalCarbs - fiber) * 100) / 100);
+         
+         // 2. Extract the remaining core macro amounts
+         const caloriesObj = recipe.nutrition.nutrients.find(n => n.name === "Calories");
+         const fatObj = recipe.nutrition.nutrients.find(n => n.name === "Fat");
+         const proteinObj = recipe.nutrition.nutrients.find(n => n.name === "Protein");
+         
+         if (caloriesObj) calories = caloriesObj.amount;
+         if (fatObj) fat = fatObj.amount;
+         if (proteinObj) protein = proteinObj.amount;
+       }
+       
+       // 3. Create a 100% flat object (matching the "chicken file" design style)
+       const cleanRecipe = {
+         id: recipe.id,
+         title: recipe.title,
+         image: recipe.image,
+         diet: "keto",
+         calories: calories,
+         fat: fat,
+         protein: protein,
+         netCarbs: netCarbs
+       };
+       
+       return cleanRecipe;
+     });
+
+     // Overwrite Bruno's display pane with the flat data
+     res.setBody(data);
+   }
+   ```
+3. Seeding the resulting flat JSON payload directly into the MongoDB `Keto` collection.
 
 ### 1. Backend Server Setup
 1. Navigate to the backend directory:
@@ -96,7 +145,7 @@ The initial database records were seeded by:
    ```
 3. Run the development server (configured with proxy forwarding to the backend API):
    ```bash
-   npm start
+   npm run start
    ```
 4. Open your browser and navigate to `http://localhost:4200/`.
 
