@@ -1,10 +1,17 @@
 // Hello from the MongoDB branch!
 import express from 'express';
 import config from 'config';
+import fs from 'fs';
 import { ketoFoodRouter } from './routes/ketoFood.routes.js';
 import { logger } from './utils/logger.js';
 import { errorHandlerMiddleware } from './middleware/errorHandler.middleware.js';
 import { database } from './utils/database.js';
+import { Constants } from './utils/constants.js';
+
+// Ensure upload directory exists on startup
+if (!fs.existsSync(Constants.IMAGE_UPLOAD_PATH)) {
+  fs.mkdirSync(Constants.IMAGE_UPLOAD_PATH, { recursive: true });
+}
 
 const app = express();
 const port = 3000;

@@ -1,5 +1,6 @@
 import { KetoFoodsService } from "../services/ketoFoods.service.js";
 import { logger } from '../utils/logger.js';
+import { Constants } from '../utils/constants.js';
 
 export class KetoFoodsController {
     static getKetoFoods = async (req, res, next) => {
@@ -35,6 +36,8 @@ export class KetoFoodsController {
 
         if (req.file?.filename) {
             req.body.image = `${Constants.IMAGE_STATIC_PATH}${req.file.filename}`;
+        } else {
+            req.body.image = `${Constants.IMAGE_STATIC_PATH}Default Keto.jpeg`;
         }
 
         if (req.body?.calories) {
