@@ -1,6 +1,6 @@
 # 🥑 Keto Nutrition Tracker — Full-Stack Capstone Application
 
-A modern, responsive, full-stack web application designed to track Keto-friendly recipes and foods. This application enables users to manage their recipes, upload meal photos, and visualize macronutrient distribution (Calories, Fat, Protein, and Net Carbs) via a real-time responsive dashboard.
+A modern, responsive, full-stack web application designed to track Keto-friendly foods. This application enables users to manage their nutrients, upload meal photos, and visualize macronutrient distribution (Calories, Fat, Protein, and Net Carbs) via a real-time responsive dashboard.
 
 ---
 
