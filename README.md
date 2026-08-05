@@ -1,6 +1,6 @@
 # 🥑 Keto Nutrition Tracker — Full-Stack Capstone Application
 
-A modern, responsive, full-stack web application designed to track Keto-friendly foods. This application enables users to manage their nutrients, upload meal photos, and visualize macronutrient distribution (Calories, Fat, Protein, and Net Carbs) via a real-time responsive dashboard.
+A modern, responsive, full-stack web application designed to track Keto-friendly meals. This application enables users to manage their recipes, upload meal photos, and visualize macronutrient distribution (Calories, Fat, Protein, and Net Carbs) via a real-time responsive dashboard.
 
 ---
 
@@ -66,7 +66,7 @@ A modern, responsive, full-stack web application designed to track Keto-friendly
 This application is built with an **offline-first, self-contained architecture**. Rather than querying external APIs at runtime, the Express backend serves data directly from your local MongoDB instance. This enables full CRUD operations (creating, editing, and deleting items) and avoids runtime API rate limits.
 
 The initial database records were seeded by:
-1. Fetching raw ketogenic recipe data from the **Spoonacular API** using the Bruno API client.
+1. Fetching raw ketogenic meal data from the **Spoonacular API** using the Bruno API client.
 2. Running a **Post-Response script** inside Bruno to extract, validate, and flatten the nested Spoonacular response format into a flat schema:
    ```javascript
    let data = res.getBody();
